@@ -1,0 +1,5 @@
+global-include *.pyc
+include LICENSE
+include README.rst
+include README.rst
+include app

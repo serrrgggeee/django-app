@@ -1,0 +1,64 @@
+Metadata-Version: 1.1
+Name: django-app
+Version: 0.1
+Summary: A simple Django app to manage User, Group, Permission, ContentType framework
+Home-page: https://www.example.com/
+Author: serrrgggeee
+Author-email: crackkc@mail.ru
+License: BSD License
+Description: =====
+        app
+        =====
+        
+        App is a simple Django m3 app to manage User, Group, Permission and Contenttype framework. 
+        
+        Detailed documentation is in the "docs" directory.
+        
+        Quick start
+        -----------
+        
+        1. Add "app" to your INSTALLED_APPS setting like this::
+        
+            INSTALLED_APPS = [
+                ...
+                'app',
+            ]
+        
+        2. Include 
+        
+        	from m3 import get_app_urlpatterns
+        
+        
+        	def workspace(request):
+        	   u"""
+        	   Возвращает view для отображения Рабочего Стола
+        	   на основе шаблона m3
+        	   """
+        	   return render(
+        	       request, 'm3_workspace.html',
+        	       context={'debug': settings.DEBUG}, )
+        
+        
+        	urlpatterns = [
+        	   url(r'^admin/', admin.site.urls),
+        	   url(r'^$', workspace),
+        	]
+        
+        	# =======================================================
+        	# собираем шаблоны урлов из app_meta подключенных приложений
+        	#========================================================
+        	urlpatterns += tuple(get_app_urlpatterns())
+        
+        3. Visit http://127.0.0.1:8000 to participate in the app.
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.11
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
